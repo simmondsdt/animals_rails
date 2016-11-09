@@ -1,0 +1,11 @@
+<h2><%= @animal.name %></h2>
+<%= link_to 'Edit', edit_person_animal_path(@person, @animal) %> --
+<%= link_to 'Delete', person_animal_path(@person, @animal), method: :delete, data: {confirm: 'Are you sure?'}%> --
+<%= link_to 'Owner', person_path(@person, @animal) %>
+<hr />
+  <p>Animal Name: <%= @animal.name%></p>
+  <p>Species: <%= @animal.species %></p>
+  <p>Age is: <%= @animal.age %></p>
+  <h4>Alive: <%= @alive ? 'Yes' : 'No' %></h4>
+
+<%= link_to 'Animals', person_animals_path(@person) %>

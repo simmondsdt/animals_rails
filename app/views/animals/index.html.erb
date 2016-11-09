@@ -1,0 +1,19 @@
+<h2> All Animals For: <%= @person.name %> </h2>
+</hr>
+
+<% if @animals.any? %>
+  <ul>
+    <% @animals.each do |animal| %>
+      <li>
+        <%= link_to animal.name, person_animal_path(@person, animal) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h5>No animals found, please create one</h5>
+<% end %>
+
+<br />
+<%= link_to 'New Animal', new_person_animal_path(@person) %>
+<br />
+<%= link_to 'Person Page', person_path(@person) %>
